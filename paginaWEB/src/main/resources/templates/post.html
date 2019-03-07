@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+
+
+<html>
+
+<head>
+<link href="./css/bootstrap.css" rel="stylesheet" th:href="@{/css/bootstrap.css}"/>
+<script src="./js/jquery.js" th:src="@{/js/jquery.js}"></script>
+<script src="./js/bootstrap.js" th:src="@{/js/bootstrap.js}"></script>
+
+</head>
+
+<body>
+
+<div class="jumbotron">
+  <h1 th:text="${post.titulo}" class="display-4">Hello, world!</h1>
+  <p th:text = "${post.descripcion}" class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+  <hr class="my-4">
+  <p th:text = "${post.fecha}">It uses utility classes for typography and spacing to space content out within the larger container.</p>
+  <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+</div>
+
+
+</body>
+
+<footer>
+
+SySTM.
+
+</footer>
+
+</html>

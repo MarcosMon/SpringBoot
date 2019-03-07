@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:th="http://www.thymeleaf.org"
+    xmlns:sec="http://www.thymeleaf.org">
+
+
+<head>
+
+<link href="./css/bootstrap.css" rel="stylesheet" th:href="@{/css/bootstrap.css}"/>
+<script src="./js/jquery.js" th:src="@{/js/jquery.js}"></script>
+<script src="./js/bootstrap.js" th:src="@{/js/bootstrap.js}"></script>
+
+<title>SySCursos</title>
+
+</head>
+
+
+<body>
+
+<nav class="navbar navbar-dark bg-primary">
+  <a class="navbar-brand" href="#">SyS</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a class="nav-item nav-link active" th:href="@{/}" href="#">Inicio <span class="sr-only">(current)</span></a>
+      <a class="nav-item nav-link" href="#">Galeria</a>
+      <a class="nav-item nav-link" href="#">Post</a>
+    </div>
+  </div>
+</nav>
+
+
+<div class="jumbotron">
+  <h1 class="display-4">Cursos de Desarrollo Web</h1>
+  <p class="lead">Esta página está destinada a impartir cursos de varios lenguajes de programación y desarrollo web</p>
+  <hr class="my-4">
+  <p>Para conocer más y donarme BitCoins, accede a DÓNAME</p>
+  <a class="btn btn-primary btn-lg" href="#" role="button">DÓNAME</a>
+</div>
+
+<div class="container">
+
+<div class="row">
+
+<div th:each="post : ${posts}" class="col-3">
+
+<div class="card" style="width: 18rem;">
+  <img th:src ="${post.urlImg}" src="../static/img/poker.jpg" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 th:text ="${post.titulo}" class="card-title">Card title</h5>
+    <p th:text= "${post.descripcion}" class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a th:href="@{/home/post?id=} +  ${post.id} " class="btn btn-primary">Conocer Más</a>
+  </div>
+</div>
+</div>
+</div>
+
+
+<div  class="row" >
+
+
+<div class = "col-9">
+<nav aria-label="...">
+  <ul class="pagination justify-content-center">
+    <li class="page-item disabled">
+      <span class="page-link">Previous</span>
+    </li>
+    <li class="page-item"><a class="page-link" href="#">1</a></li>
+    <li class="page-item active" aria-current="page">
+      <span class="page-link">
+        2
+        <span class="sr-only">(current)</span>
+      </span>
+    </li>
+    <li class="page-item"><a class="page-link" href="#">3</a></li>
+    <li class="page-item">
+      <a class="page-link" href="#">Next</a>
+    </li>
+  </ul>
+</nav>
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+
+<footer>
+
+
+<p>SySTM</p>
+
+
+
+</footer>
+
+</body>
+
+
+
+
+
+
+
+</html>
